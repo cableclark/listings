@@ -15,11 +15,20 @@
                     @endif
 
                     You are logged in!
-                   
+                   <h3> Your listings</h3>
                     @if(count($listings) > 0)
-                    <ul>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Company</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
                         @foreach($listings as $listing)
-                                <li>{{$listing->name}}</li>   
+                        <tr>        
+                            <td>{{$listing->name}}</td> 
+                            <td></td>
+                            <td></td>
+                        </tr>  
                         @endforeach
                     </ul>
                    @endif
