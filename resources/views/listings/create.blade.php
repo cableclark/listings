@@ -8,14 +8,13 @@
 
                 <div class="card-body">
                 
-                        {!! Form::open(['action' => 'ListingsController@store', 'method'=> 'post']) !!}
-   
+                    {!! Form::open(['action' => 'ListingsController@store', 'method'=> 'post']) !!}
                         {{ Form::bsText('name') }}
-                        {{ Form::bsText('email') }}
+                        {{ Form::bsText('web_site') }}
                         {{ Form::bsText('phone') }}
                         {{ Form::bsText('address') }}
                         {{ Form::bsTextarea('bio') }}
-                        {{ Form::bsSubmit('submit', ['class'=> 'btn btn-primary']) }}
+                        {{ Form::bsSubmit('submit') }}
                     {!! Form::close() !!}
                     
                  
