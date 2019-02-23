@@ -10,7 +10,7 @@
                 
                     {!! Form::open(['action' => 'ListingsController@store', 'method'=> 'post']) !!}
                         {{ Form::bsText('name') }}
-                        {{ Form::bsText('web_site') }}
+                        {{ Form::bsText('website') }}
                         {{ Form::bsText('phone') }}
                         {{ Form::bsText('address') }}
                         {{ Form::bsTextarea('bio') }}

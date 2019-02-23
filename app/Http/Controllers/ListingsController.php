@@ -43,10 +43,10 @@ class ListingsController extends Controller
         ]);
 
         //create lisitng
-
+    
         $listing = new Listing;
         $listing->name = $request->input('name');
-        $listing->website = $request->input('web_site');
+        $listing->website = $request->input('website');
         $listing->phone = $request->input('phone');
         $listing->address = $request->input('address');
         $listing->bio = $request->input('bio');
