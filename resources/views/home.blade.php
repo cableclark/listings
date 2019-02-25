@@ -14,9 +14,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                   <h3> Your listings</h3>
+                
+                    <div class="d-flex justify-content-between mb-5">  
+                        <h3> Your listings</h3>
+                        <a  href="/listings/create" class = "btn btn-success"> Create new</a>
+                    </div> 
                     @if(count($listings) > 0)
+
                     <table class="table table-striped">
                         <tr>
                             <th>Company</th>
@@ -26,8 +30,9 @@
                         @foreach($listings as $listing)
                         <tr>        
                             <td>{{$listing->name}}</td> 
-                            <td></td>
-                            <td></td>
+                        <td>
+                            <a  href="/listings/{{$listing->id}}/edit" class = "float-right btn btn-success"> Edit</a</td>
+                            <td><a  href="/listings/{{$listing->id}}" class = "float-right btn btn-danger"> Delete</a</td>
                         </tr>  
                         @endforeach
                     </table>

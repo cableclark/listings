@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-
-    return 123;
-
-});
+Route::get('/', "ListingsController@index");
 
 Auth::routes();
 
