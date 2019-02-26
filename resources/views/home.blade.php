@@ -32,7 +32,16 @@
                             <td>{{$listing->name}}</td> 
                         <td>
                             <a  href="/listings/{{$listing->id}}/edit" class = "float-right btn btn-success"> Edit</a</td>
-                            <td><a  href="/listings/{{$listing->id}}" class = "float-right btn btn-danger"> Delete</a</td>
+                            <td>
+                                    {!! Form::open(['action' => ['ListingsController@update', $listing->id], 'method'=> 'post']) !!}
+                                
+                                    {{Form::hidden("_method", "DELETE")}}
+                                    
+                                    <button type="submit" class="btn btn-danger"> Delete </button>
+                                   
+                                {!! Form::close() !!}
+                            </td>
+                
                         </tr>  
                         @endforeach
                     </table>
