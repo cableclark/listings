@@ -7,6 +7,13 @@ use App\Listing;
 
 class ListingsController extends Controller
 {
+
+    public function ___construct () 
+    {
+
+        $this->middleware('auth', ['except' =>['show', 'index' ]]);
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +22,9 @@ class ListingsController extends Controller
     public function index()
     {
         //
-        $post = Listing::all();
+        $listings = Listing::orderBy('created_at', 'desc')->get();
 
-        return view ('welcome')->with(['post'=>$post]);
+        return view ('welcome')->with(['listings'=>$listings]);
     }
 
     /**
@@ -71,6 +78,9 @@ class ListingsController extends Controller
     public function show($id)
     {
         //
+        $listings = Listing::find($id);
+
+        return view ('listings.show')->with(['listings'=>$listings]);
     }
 
     /**
